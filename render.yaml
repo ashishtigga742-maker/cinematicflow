@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: cinematicflow
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: WHISPER_MODEL
+        value: tiny
